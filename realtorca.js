@@ -4,7 +4,7 @@ const request = require('request-promise');
 const querystring = require('querystring');
 
 const MAP_URL = 'https://www.realtor.ca/Residential/Map.aspx';
-const API_URL = 'https://api2.realtor.ca';
+const API_URL = 'https://api47.realtor.ca';
 const clientSettingsDefaults = {
 	CultureId: 1,
 	ApplicationId: 37
@@ -66,13 +66,13 @@ class Realtor {
 
 		return MAP_URL + qs.slice(0, -1); //To remove trailing ampersand or pound
 	}
-	
+
 	/**
 	 * Given a URL from realtor.ca, attemtps to parse the query string parameters into a usable filter option set.
 	 * @param {string} url The realtor.ca URL string that represents the filters
 	 */
 	static optionsFromUrl(url) {
-		return querystring.parse(url);	
+		return querystring.parse(url);
 	}
 }
 
